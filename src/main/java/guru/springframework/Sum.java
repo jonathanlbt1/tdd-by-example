@@ -2,8 +2,8 @@ package guru.springframework;
 
 public class Sum implements Expression{
 
-    Expression augend;
-    Expression addmend;
+    final Expression augend;
+    final Expression addmend;
 
     public Sum(Expression augend, Expression addmend) {
         this.augend = augend;
@@ -16,7 +16,6 @@ public class Sum implements Expression{
         return new Money(amount,to);
     }
 
-    @Override
     public Expression plus(Expression addend) {
         return new Sum(this,addend);
     }
